@@ -9,38 +9,43 @@ public class FoodTruckTester {
 		
 		Scanner kb = new Scanner(System.in);
 
-		String Name, Type;
-		int Rating, i, ID;
+		String truckName, foodType;
+		int truckRating, i, iD = 0;
 		FoodTruck ftArray[] = new FoodTruck[5];		
 		
-		for (i = 0; i < 2; i++) {
-		ID = i;
-		System.out.println("Truck ID: " + ID);
+		for (i = 0; i < 3; i++) {
+		ftArray[i] = new FoodTruck();
+		iD++;
+		ftArray[i].setID(iD);
+		System.out.println("Truck ID: " + iD);
 		System.out.println("Enter Name");
-		Name = kb.next();
+		truckName = kb.next();
+		ftArray[i].setTruckName(truckName);
 		System.out.println("Enter Type");
-		Type = kb.next();
+		foodType = kb.next();
+		ftArray[i].setFoodType(foodType);
 		System.out.println("Enter Rating 1(lowest) to 10 (highest)");
-		Rating = kb.nextInt();
-		while (Rating > 10){	
+		truckRating = kb.nextInt();
+		ftArray[i].setTruckRating(truckRating);
+		while (truckRating > 10){	
 				System.out.println("Error, enter a whole number 1 being lowest and 10 being highest rated");
-				Rating = kb.nextInt();
+				truckRating = kb.nextInt();
 		}
-		System.out.println(Name + Type + Rating + ID);
+		System.out.println("i is " + i);
+		System.out.println("ID is " + iD);
+		System.out.println(truckName + foodType + truckRating + iD);
 		
-//		ft[i]. = Name;
-//		ft[i].foodType = Type;
-//		ft[i].truckRating = Rating;
-//		ft[i].ID = ID;
 		}
 		
-		ftArray.displayFoodTruck();
+		ftArray[0].displayFoodTruck();
+		ftArray[1].displayFoodTruck();
+		ftArray[2].displayFoodTruck();
 		
-		String ft1Data = ftArray[1].getFoodTruckData();
+//		String ft1Data = ftArray[0].getFoodTruckData();
 		
-		System.out.println("Food Truck 1 data: " + ft1Data);
+//		System.out.println("Food Truck 1 data: " + ft1Data);
 		
-		ftArray[i].Menu();
+//		ftArray[i].Menu();
 		
 		
 //		public void Menu() {

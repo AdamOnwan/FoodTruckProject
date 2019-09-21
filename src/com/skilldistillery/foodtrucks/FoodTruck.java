@@ -53,64 +53,55 @@
 package com.skilldistillery.foodtrucks;
 
 public class FoodTruck {
-	private String[] truckName;
-	private String[] foodType;
-	private int[] truckRating;
-	private int[] ID;
+	private String truckName;
+	private String foodType;
+	private int truckRating;
+	private int ID;
 
 	
 	
 
-	public FoodTruck() {
+public FoodTruck() {
 		super();
 	}
-
-	public FoodTruck(String truckName, String foodType, int truckRating) {
+public FoodTruck(String truckName, String foodType, int truckRating, int iD) {
 		super();
 		this.truckName = truckName;
 		this.foodType = foodType;
 		this.truckRating = truckRating;
-	}
-
-	public String getFoodType() {
-		return foodType;
-	}
-
-	public void setFoodType(String foodType) {
-		this.foodType = foodType;
-	}
-
-	public int getTruckRating() {
-		return truckRating;
-	}
-
-	public void setTruckRating(int truckRating) {
-		this.truckRating = truckRating;
-	}
-
-	public int getID() {
-		return ID;
-	}
-
-	public void setID(int iD) {
 		ID = iD;
 	}
 
-	public String getTruckName() {
+public String getTruckName() {
 		return truckName;
 	}
-	
 	public void setTruckName(String truckName) {
 		this.truckName = truckName;
 	}
+	public String getFoodType() {
+		return foodType;
+	}
+	public void setFoodType(String foodType) {
+		this.foodType = foodType;
+	}
+	public int getTruckRating() {
+		return truckRating;
+	}
+	public void setTruckRating(int truckRating) {
+		this.truckRating = truckRating;
+	}
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
+	}
 	// testing information
 	public String getFoodTruckData() {
-		System.out.println("\nthis is get data method\n");
 		String output = "\ntruckID: " + ID + "\ntruckName: " + truckName + "\nfoodType: " + foodType + "\ntruckRating: " + truckRating;
 		return output;
 	}
 	public void displayFoodTruck() {
-		System.out.println("\n this is display method\n");
 		String ftData = getFoodTruckData();
 		System.out.println(ftData);
 	}
