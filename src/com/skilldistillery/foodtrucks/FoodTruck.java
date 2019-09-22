@@ -33,29 +33,30 @@ public class FoodTruck {
 				truckRating = kb.nextInt();
 			}
 			ftArray[i].setID(i);
-			System.out.println("ID is ");
-			System.out.println(truckName + foodType + truckRating + ID);
+			System.out.println(truckName + " " + foodType + " " + truckRating + " " + ID);
 		}
 	}
 
-	public int truckRating() {
+	public void truckRating() {
 		int output = 0;
 		for (int i = 0; i < ftArray.length; i++) {
 			if (i < ftArray.length) {
 				output = output + ftArray[i].truckRating;
 			}
 		}
-		return output = (output / (ftArray.length * 10));
+		System.out.print("Average rating is: ");
+		System.out.println(output = (output / ftArray.length));
 	}
 
-	public int highRating() {
+	public void highRating() {
 		int max = ftArray[0].truckRating;
+		FoodTruck maxTruck = ftArray[0];
+
 		for (int i = 0; i < ftArray.length; i++) {
-			if (max > ftArray[i].truckRating) {
-				max = ftArray[i].truckRating;
+			if (maxTruck.truckRating < ftArray[i].truckRating) {
+				maxTruck = ftArray[i];
 			}
-		}
-		return max;
+		} System.out.println(maxTruck);
 	}
 
 	public void truckMenu(Scanner kb) {
@@ -78,11 +79,10 @@ public class FoodTruck {
 
 				break;
 			case "2":
-				System.out.println(truckRating());
-
+				truckRating();
 				break;
 			case "3":
-				System.out.println(highRating());
+				highRating();
 				break;
 			case "4":
 				keepGoing = false;
