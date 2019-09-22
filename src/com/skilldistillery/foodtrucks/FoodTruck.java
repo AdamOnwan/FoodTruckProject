@@ -1,114 +1,152 @@
-//Food Trucks
-//Overview
-//Users will input and rate a list of food trucks, then view the average rating and the 
-//highest-rated truck.
-//
-//Structure
-//TODO You will define a FoodTruck class with fields for a unique numeric id, a name 
-//("TacoRific", "Mediterranean Medic", etc.), food type ("Tacos", "Falafel", etc.), and a 
-//numeric rating.
-//
-//TODO You will create a separate class with a main method that starts the program. It will 
-//have an array to store up to five FoodTruck objects. The main method of this class is the 
-//only static method in the entire project.
-//
-//User Stories
-//User Story #1
-//TODO The user is prompted to input the name, food type, and rating for up to five food trucks. 
-//TODO For each set of input, a FoodTruck object is created, its fields set to the user's input, 
-//and it is added to the array. The truck id is not input by the user, but instead assigned 
-//automatically in the FoodTruck constructor from a static field that is incremented as each 
-//truck is created.
-//
-//User Story #2
-//TODO If the user inputs quit for the food truck name, input ends immediately and the program 
-//continues.
-//
-//User Story #3
-//TODO After input is complete, the user sees a menu from which they can choose to:
-//
-//TODO List all existing food trucks.
-//TODO See the average rating of food trucks.
-//TODO Display the highest-rated food truck.
-//Quit the program.
-//User Story #4
-//TODO After choosing a menu item, the user sees the menu again and can choose another item until 
-//the choose to quit.
-//
-//There are no static methods other than the one main method.
-//When a FoodTruck is created, its constructor assigns its id field the current value of a 
-//static field (such as (nextTruckId) and then increments the static field.
-//The user can input up to five food trucks.
-//The user can stop inputing trucks before entering five by entering quit as the truck name, 
-//after which all input stops and the program continues.
-//When a menu item is chosen the list of all trucks entered is displayed. If less than five 
-//were input, only those trucks that were created are displayed.
-//When another menu item is chosen the average rating based on the number of trucks entered 
-//is displayed.
-//When another menu item is chosen the winning truck - the one that was input with the highest 
-//rating - is displayed with all its properties.
-//Food trucks are displayed by printing its toString, which includes all FoodTruck fields.
-//When the quit menu item is chosen, the program ends with a message.
-
 package com.skilldistillery.foodtrucks;
+
+import java.util.Scanner;
 
 public class FoodTruck {
 	private String truckName;
 	private String foodType;
 	private int truckRating;
-	private int ID;
+	private int ID = 0;
+	private static int nextID = 1;
+	FoodTruck ftArray[] = new FoodTruck[3];
 
-	
-	
+	public void truckInput(Scanner kb) {
+		String truckName, foodType;
+		int truckRating, i;
 
-public FoodTruck() {
-		super();
+		for (i = 0; i < ftArray.length; i++) {
+			ftArray[i] = new FoodTruck();
+			System.out.println("Enter Name");
+			truckName = kb.next();
+			if (truckName.equalsIgnoreCase("quit")) {
+				break;
+			}
+			ftArray[i].setTruckName(truckName);
+			System.out.println("Enter Type");
+			foodType = kb.next();
+			ftArray[i].setFoodType(foodType);
+			System.out.println("Enter Rating 1(lowest) to 10 (highest)");
+			truckRating = kb.nextInt();
+			ftArray[i].setTruckRating(truckRating);
+			while (truckRating > 10) {
+				System.out.println("Error, enter a whole number 1 being lowest and 10 being highest rated");
+				truckRating = kb.nextInt();
+			}
+			ftArray[i].setID(i);
+			System.out.println("ID is ");
+			System.out.println(truckName + foodType + truckRating + ID);
+		}
 	}
-public FoodTruck(String truckName, String foodType, int truckRating, int iD) {
-		super();
-		this.truckName = truckName;
-		this.foodType = foodType;
-		this.truckRating = truckRating;
-		ID = iD;
+
+	public int truckRating() {
+		int output = 0;
+		for (int i = 0; i < ftArray.length; i++) {
+			if (i < ftArray.length) {
+				output = output + ftArray[i].truckRating;
+			}
+		}
+		return output = (output / (ftArray.length * 10));
 	}
 
-public String getTruckName() {
+	public int highRating() {
+		int max = ftArray[0].truckRating;
+		for (int i = 0; i < ftArray.length; i++) {
+			if (max > ftArray[i].truckRating) {
+				max = ftArray[i].truckRating;
+			}
+		}
+		return max;
+	}
+
+	public void truckMenu(Scanner kb) {
+		boolean keepGoing = true;
+		do {
+
+			System.out.println("(1) List all existing food trucks");
+			System.out.println("(2) See the average rating of food trucks");
+			System.out.println("(3) Display the highest-rated food truck");
+			System.out.println("(4) Quit the program");
+			String switchmenu = kb.next();
+			switch (switchmenu) {
+			case "1":
+				for (int i = 0; i < ftArray.length; i++) {
+					if (ftArray[i] == null) {
+						break;
+					} else
+						System.out.println(ftArray[i].toString());
+				}
+
+				break;
+			case "2":
+				System.out.println(truckRating());
+
+				break;
+			case "3":
+				System.out.println(highRating());
+				break;
+			case "4":
+				keepGoing = false;
+			}
+		} while (keepGoing == true);
+	}
+
+	public String getTruckName() {
 		return truckName;
 	}
+
 	public void setTruckName(String truckName) {
 		this.truckName = truckName;
 	}
+
 	public String getFoodType() {
 		return foodType;
 	}
+
 	public void setFoodType(String foodType) {
 		this.foodType = foodType;
 	}
+
 	public int getTruckRating() {
 		return truckRating;
 	}
+
 	public void setTruckRating(int truckRating) {
 		this.truckRating = truckRating;
 	}
+
 	public int getID() {
 		return ID;
 	}
+
 	public void setID(int iD) {
-		ID = iD;
+		this.ID = nextID;
+		nextID++;
 	}
-	// testing information
-	public String getFoodTruckData() {
-		String output = "\ntruckID: " + ID + "\ntruckName: " + truckName + "\nfoodType: " + foodType + "\ntruckRating: " + truckRating;
-		return output;
+
+	public FoodTruck[] getFtArray() {
+		return ftArray;
 	}
-	public void displayFoodTruck() {
-		String ftData = getFoodTruckData();
-		System.out.println(ftData);
+
+	public void setFtArray(FoodTruck[] ftArray) {
+		this.ftArray = ftArray;
 	}
-	public void Menu() {
-		System.out.println("Press 1 for food truck list");
-		System.out.println("Press 2 for rating");
-		System.out.println("Type Quit to quit");
+
+	public FoodTruck(String truckName, String foodType, int truckRating, FoodTruck[] ftArray) {
+		super();
+		this.truckName = truckName;
+		this.foodType = foodType;
+		this.truckRating = truckRating;
+		this.ID = nextID;
 	}
-	
+
+	public FoodTruck() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "FoodTruck [truckName=" + truckName + ", foodType=" + foodType + ", truckRating=" + truckRating + ", ID="
+				+ ID;
+	}
+
 }
