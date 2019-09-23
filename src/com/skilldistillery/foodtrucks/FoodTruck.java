@@ -8,24 +8,25 @@ public class FoodTruck {
 	private int truckRating;
 	private int ID = 0;
 	private static int nextID = 1;
-	FoodTruck ftArray[] = new FoodTruck[5];
+	private FoodTruck ftArray[] = new FoodTruck[5];
+	private int counter;
 
 	public void truckInput(Scanner kb) {
 		String truckName, foodType;
 		int truckRating, i;
 
 		for (i = 0; i < ftArray.length; i++) {
-			System.out.println("Enter Name");
+			System.out.println("Enter Truck Name:");
 			truckName = kb.next();
 			if (truckName.equalsIgnoreCase("quit")) {
 				break;
 			}
 			ftArray[i] = new FoodTruck();
 			ftArray[i].setTruckName(truckName);
-			System.out.println("Enter Type");
+			System.out.println("Enter Truck Type:");
 			foodType = kb.next();
 			ftArray[i].setFoodType(foodType);
-			System.out.println("Enter Rating 1(lowest) to 10 (highest)");
+			System.out.println("Enter Truck Rating 1(lowest) to 10 (highest)");
 			truckRating = kb.nextInt();
 			ftArray[i].setTruckRating(truckRating);
 			while (truckRating > 10) {
@@ -33,29 +34,36 @@ public class FoodTruck {
 				truckRating = kb.nextInt();
 			}
 			ftArray[i].setID(i);
+			counter++;
 		}
 	}
 
 	public void truckRating() {
 		int output = 0;
-		for (int i = 0; i < ftArray.length; i++) {
-			if (i < ftArray.length) {
+//		for (int i = 0; i < ftArray.length; i++) {
+		for (int i = 0; i < counter; i++) {
+			if (i < counter) {
 				output = output + ftArray[i].truckRating;
 			}
 		}
+		double average;
+		average = ((double) output / counter);
 		System.out.print("Average rating is: ");
-		System.out.println(output = (output / ftArray.length));
+		System.out.printf("%.2f", average);
+		System.out.println();
 	}
 
 	public void highRating() {
-		int max = ftArray[0].truckRating;
+//		int max = ftArray[0].truckRating;
 		FoodTruck maxTruck = ftArray[0];
 
-		for (int i = 0; i < ftArray.length; i++) {
+//		for (int i = 0; i < ftArray.length; i++) {
+		for (int i = 0; i < counter; i++) {
 			if (maxTruck.truckRating < ftArray[i].truckRating) {
 				maxTruck = ftArray[i];
 			}
-		} System.out.println(maxTruck);
+		}
+		System.out.println(maxTruck);
 	}
 
 	public void truckMenu(Scanner kb) {
@@ -83,10 +91,19 @@ public class FoodTruck {
 			case "3":
 				highRating();
 				break;
-			case "4 || quit":
+			case "4":
 				keepGoing = false;
+				System.out.println("Goodbye, have a nice day");
 			}
 		} while (keepGoing == true);
+	}
+
+	public int getCounter() {
+		return counter;
+	}
+
+	public void setCounter(int counter) {
+		this.counter = counter;
 	}
 
 	public String getTruckName() {
