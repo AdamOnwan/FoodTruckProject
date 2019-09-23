@@ -6,6 +6,24 @@ such as finding the average rating and which truck has the highest rating.
 ### Week 2 Homework Project for Skill Distillery
 
 ### Overview
+#### Installation
+It is recommended that you have JDK8. If you have JDK the installation steps are:
+1. download the files
+2. javac the files
+3. java the FoodTruckTester
+If you do NOT have JDK, you may use Jdoodle online, https://www.jdoodle.com/online-java-compiler-ide/
+From Jdoodle do:
+1. click on the 3 dots to rename the MyClass.java to FoodTruckTester.java
+2. click on the 3 dots to make it start file
+3. copy and paste the code from FoodTruckTester on my github into the coding field on Jdoodle
+4. delete the package line
+5. click on the 3 dots by / and click on new file
+6. name it FoodTruck
+7. copy the java code from FoodTruck on my github to the coding field on Jdoodle
+8. click the interactive button
+9. click execute
+Be aware with Jdoodle there is a lot of code for it to compile, so possible bug, suggested that if bugged to execute the program again and restart.
+#### Instructions
 The user starts immediately with input information into the Food Truck array.
 User is prompted to input Truck Name, Truck Type, Truck rating, and then is given
 a unique ID.
