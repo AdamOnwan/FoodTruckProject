@@ -38,9 +38,8 @@ public class FoodTruck {
 		}
 	}
 
-	public void truckRating() {
+	private void truckRating() {
 		int output = 0;
-//		for (int i = 0; i < ftArray.length; i++) {
 		for (int i = 0; i < counter; i++) {
 			if (i < counter) {
 				output = output + ftArray[i].truckRating;
@@ -53,11 +52,9 @@ public class FoodTruck {
 		System.out.println();
 	}
 
-	public void highRating() {
-//		int max = ftArray[0].truckRating;
+	private void highRating() {
 		FoodTruck maxTruck = ftArray[0];
 
-//		for (int i = 0; i < ftArray.length; i++) {
 		for (int i = 0; i < counter; i++) {
 			if (maxTruck.truckRating < ftArray[i].truckRating) {
 				maxTruck = ftArray[i];
