@@ -12,7 +12,7 @@ It is recommended that you have JDK8. If you have JDK the installation steps are
 2. javac the files
 3. java the FoodTruckTester
 If you do NOT have JDK, you may use Jdoodle online, https://www.jdoodle.com/online-java-compiler-ide/
-From Jdoodle do:
+#####From Jdoodle do:
 1. click on the 3 dots to rename the MyClass.java to FoodTruckTester.java
 2. click on the 3 dots to make it start file
 3. copy and paste the code from FoodTruckTester on my github into the coding field on Jdoodle
