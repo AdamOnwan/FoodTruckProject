@@ -6,13 +6,14 @@ such as finding the average rating and which truck has the highest rating.
 ### Week 2 Homework Project for Skill Distillery
 
 ### Overview
-#### Installation (with JDK8)
-It is recommended that you have JDK8. If you have JDK the installation steps are:
-1. download the files from github (specifically FoodTruck.java and FoodTrucktester.java)
-2. Type in console: javac FoodTruck.java
-3. Type in console javac FoodTrucktester.java
-4. Type in console: java FoodTruckTester
-If does not work, open with a java editor and delete the package line. (should be first line)
+#### Installation (with JDK8 and Atom)
+It is recommended that you have JDK8 and Atom.
+1. Make two files FoodTruck.java and FoodTruckTester.javac
+2. Copy the code from github, all except the package line and paste them respectively in the correct files and Save.
+3. Type in console: javac FoodTruck.java
+4. Type in console javac FoodTrucktester.java
+5. Type in console: java FoodTruckTester
+
 
 #### Installion (without java platform)
 If you do NOT have JDK, you may use Jdoodle online, https://www.jdoodle.com/online-java-compiler-ide/
