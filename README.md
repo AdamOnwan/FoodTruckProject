@@ -28,36 +28,37 @@ If you do NOT have JDK, you may use Jdoodle online, https://www.jdoodle.com/onli
 9. click execute
 Be aware with Jdoodle there is a lot of code for it to compile, so possible bug, suggested that if bugged to execute the program again and restart.
 #### Instructions
-The user starts immediately with input information into the Food Truck array.
-User is prompted to input Truck Name, Truck Type, Truck rating, and then is given
-a unique ID.
-Next the user goes into the main menu which has four options.
-The first option is to list the Trucks inputed into the array and display what
+1. The user starts immediately with input information into the Food Truck array.
+2. User is prompted to input Truck Name, Truck Type, Truck rating, and then is given
+a unique ID. They can also limit the amount of Trucks by typing "quit" while at the Truck name option.
+3. Next the user goes into the main menu which has four options.
+4. The first option is to list the Trucks inputed into the array and display what
 was inputed into them.
-The second option is a calculation to find the average rating of the Trucks,
+5. The second option is a calculation to find the average rating of the Trucks,
 and displays what the average is.
-The third option is a calculation to find the highest rated Truck, and
+6. The third option is a calculation to find the highest rated Truck, and
 displays which truck in the array has the highest rating.
+7. The user ends the program by selecting the quit option.
 
 ### Technologies/Topics Applied
-Arrays, how to put information into and take information out of arrays.
-ToString, this is used to display my information on each truck.
-Getters and Setters, I used this to get and set information from and to Trucks.
-Generating Constructors using fields, used to store my information in the correct locations.
-For loops, used to show each Truck from an arrays and to input information into each slot in the array
-Objects, used as storage and to not have to rely on static for the program
-Switches, used for the main menu, to select options/ methods to be called.
-Booleans, used for an escape out of switches and other areas I need an escape.
-If statements, used to trigger certain events to happen based on condition
-Visibility, used to hide information to public, confidentiality purposes
-Counter, used to count the array length for me in case not all 5 trucks were inputted.
+1. Arrays, how to put information into and take information out of arrays.
+2. ToString, this is used to display my information on each truck.
+3. Getters and Setters, I used this to get and set information from and to Trucks.
+4. Generating Constructors using fields, used to store my information in the correct locations.
+5. For loops, used to show each Truck from an arrays and to input information into each slot in the array
+6. Objects, used as storage and to not have to rely on static for the program
+7. Switches, used for the main menu, to select options/ methods to be called.
+8. Booleans, used for an escape out of switches and other areas I need an escape.
+9. If statements, used to trigger certain events to happen based on condition
+10. Visibility, used to hide information to public, confidentiality purposes
+11. Counter, used to count the array length for me in case not all 5 trucks were inputted.
 ### Lessons Learned
-Order matters, I had my quit statement after making a truck, so I kept getting
+1. Order matters, I had my quit statement after making a truck, so I kept getting
 an empty truck.
-Counter is very helpful when an array total length is not used so the array is
+2. Counter is very helpful when an array total length is not used so the array is
 shortened and I need something to count the shortened array to help me get the
 averages.
-I think I grasped the concept of ToString, its to get a value from a private
+3. I think I grasped the concept of ToString, its to get a value from a private
 and be able to use it within a method without exposing the value to the public.
-It's easier to make a method do what I want rather than assigning it an output,
+4. It's easier to make a method do what I want rather than assigning it an output,
 so basically when I need to have an output vs when I do not need an output.
