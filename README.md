@@ -12,6 +12,7 @@ It is recommended that you have JDK8. If you have JDK the installation steps are
 2. Type in console: javac FoodTruck.java
 3. Type in console javac FoodTrucktester.java
 4. Type in console: java FoodTruckTester
+If does not work, open with a java editor and delete the package line. (should be first line)
 
 #### Installion (without java platform)
 If you do NOT have JDK, you may use Jdoodle online, https://www.jdoodle.com/online-java-compiler-ide/
