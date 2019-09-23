@@ -24,8 +24,9 @@ If you do NOT have JDK, you may use Jdoodle online, https://www.jdoodle.com/onli
 5. click on the 3 dots by / and click on new file
 6. name it FoodTruck
 7. copy the java code from FoodTruck on my github to the coding field on Jdoodle
-8. click the interactive button
-9. click execute
+8. delete the package line
+9. click the interactive button
+10. click execute
 Be aware with Jdoodle there is a lot of code for it to compile, so possible bug, suggested that if bugged to execute the program again and restart.
 #### Instructions
 1. The user starts immediately with input information into the Food Truck array.
