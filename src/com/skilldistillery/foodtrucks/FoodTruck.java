@@ -8,19 +8,19 @@ public class FoodTruck {
 	private int truckRating;
 	private int ID = 0;
 	private static int nextID = 1;
-	FoodTruck ftArray[] = new FoodTruck[3];
+	FoodTruck ftArray[] = new FoodTruck[5];
 
 	public void truckInput(Scanner kb) {
 		String truckName, foodType;
 		int truckRating, i;
 
 		for (i = 0; i < ftArray.length; i++) {
-			ftArray[i] = new FoodTruck();
 			System.out.println("Enter Name");
 			truckName = kb.next();
 			if (truckName.equalsIgnoreCase("quit")) {
 				break;
 			}
+			ftArray[i] = new FoodTruck();
 			ftArray[i].setTruckName(truckName);
 			System.out.println("Enter Type");
 			foodType = kb.next();
@@ -33,7 +33,6 @@ public class FoodTruck {
 				truckRating = kb.nextInt();
 			}
 			ftArray[i].setID(i);
-			System.out.println(truckName + " " + foodType + " " + truckRating + " " + ID);
 		}
 	}
 
@@ -72,7 +71,7 @@ public class FoodTruck {
 			case "1":
 				for (int i = 0; i < ftArray.length; i++) {
 					if (ftArray[i] == null) {
-						break;
+						continue;
 					} else
 						System.out.println(ftArray[i].toString());
 				}
@@ -84,7 +83,7 @@ public class FoodTruck {
 			case "3":
 				highRating();
 				break;
-			case "4":
+			case "4 || quit":
 				keepGoing = false;
 			}
 		} while (keepGoing == true);
